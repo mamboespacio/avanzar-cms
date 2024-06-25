@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "singularName": "company",
+    "pluralName": "companies",
+    "displayName": "Company"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "patients": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::patient.patient",
+      "mappedBy": "company"
+    }
+  }
+}

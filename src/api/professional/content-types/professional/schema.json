@@ -1,0 +1,114 @@
+{
+  "kind": "collectionType",
+  "collectionName": "professionals",
+  "info": {
+    "singularName": "professional",
+    "pluralName": "professionals",
+    "displayName": "Professional",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "birthDate": {
+      "type": "date"
+    },
+    "address": {
+      "type": "string"
+    },
+    "profTitle": {
+      "type": "string"
+    },
+    "profTitleNumber": {
+      "type": "string"
+    },
+    "profTitleExpiration": {
+      "type": "string"
+    },
+    "profReg": {
+      "type": "string"
+    },
+    "profRegNumber": {
+      "type": "string"
+    },
+    "profRegExpiration": {
+      "type": "string"
+    },
+    "profRNP": {
+      "type": "string"
+    },
+    "profRNPNumber": {
+      "type": "string"
+    },
+    "profRNPExpiration": {
+      "type": "string"
+    },
+    "profInsurance": {
+      "type": "string"
+    },
+    "profInsuranceNumber": {
+      "type": "string"
+    },
+    "profInsuranceExpiration": {
+      "type": "string"
+    },
+    "profEthic": {
+      "type": "string"
+    },
+    "profEthicNumber": {
+      "type": "string"
+    },
+    "profEthicExpiration": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "specialities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::speciality.speciality",
+      "mappedBy": "professionals"
+    },
+    "clinics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::clinic.clinic",
+      "mappedBy": "professionals"
+    },
+    "patients": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::patient.patient",
+      "mappedBy": "professionals"
+    },
+    "tax_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::tax-type.tax-type",
+      "inversedBy": "professionals"
+    },
+    "photo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

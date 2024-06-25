@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "specialities",
+  "info": {
+    "singularName": "speciality",
+    "pluralName": "specialities",
+    "displayName": "Speciality"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "professionals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::professional.professional",
+      "inversedBy": "specialities"
+    }
+  }
+}

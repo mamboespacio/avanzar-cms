@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tax_types",
+  "info": {
+    "singularName": "tax-type",
+    "pluralName": "tax-types",
+    "displayName": "Tax Type"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "professionals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::professional.professional",
+      "mappedBy": "tax_type"
+    },
+    "patients": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::patient.patient",
+      "mappedBy": "tax_type"
+    }
+  }
+}
